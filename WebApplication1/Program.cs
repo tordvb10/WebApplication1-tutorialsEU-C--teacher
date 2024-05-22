@@ -10,7 +10,7 @@ namespace WebApplication1
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddDbContext<SchoolContext>(options =>
             {
-                options.UseSqlServer("TVHSAMGALBO2PRO\\SQLEXPRESS;Database=SchoolDB;Trusted_Connection=True;TrustServerCertificate=True;");
+                options.UseSqlServer("Server=TVHSAMGALBO2PRO\\SQLEXPRESS;Database=SchoolDB;Trusted_Connection=True;TrustServerCertificate=True;");
             }
             );
 
