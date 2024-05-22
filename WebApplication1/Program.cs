@@ -10,9 +10,11 @@ namespace WebApplication1
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddDbContext<SchoolContext>(options =>
             {
-                options.UseSqlServer("Server=TVHSAMGALBO2PRO\\SQLEXPRESS;Database=SchoolDB;Trusted_Connection=True;TrustServerCertificate=True;");
+                string sqlstring = $"{Environment.GetEnvironmentVariable("SQLEXPRESS_DB_LOCAL")}Database=SchoolDB;";
+                options.UseSqlServer(sqlstring);
             }
             );
+            
 
             // Add services to the container.
             builder.Services.AddRazorPages();
